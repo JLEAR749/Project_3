@@ -1,18 +1,10 @@
-import { Link } from 'react-router-dom';
-import { useQuery } from '@apollo/client';
-import { QUERY_MATCHUPS } from '../utils/queries';
+import React from "react";
 
-const Home = () => {
-  const { loading, data } = useQuery(QUERY_MATCHUPS, {
-    fetchPolicy: "no-cache"
-  });
-
-  const matchupList = data?.matchups || [];
-
+const Sighup = () => {
+  
   return (
-    // <div class="login-container">
- 
-<div class="login-form logout mx-auto bg-dark p-5 rounded-lg shadow">
+    <div className="card bg-white card-rounded w-50">
+      <div class="login-form logout mx-auto bg-dark p-5 rounded-lg shadow">
     <h2 class="text-center text-light">Signup</h2>
     
     <div class="mb-3 row ">
@@ -35,7 +27,8 @@ const Home = () => {
   </div>
   </div>
 </div>
+    </div>
   );
 };
 
-export default Home;
+export default Sighup;
