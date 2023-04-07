@@ -5,5 +5,22 @@
     "graphql": "^16.6.0",
     "jsonwebtoken": "^9.0.0",
     "react": "^18.2.0"
-  }
+  },
+  "name": "project_3",
+  "description": "An at home bar trivia game",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/JLEAR749/Project_3.git"
+  },
+  "author": "Taylor Sample & Johannah Lear & Abduljabar Nur & Brandon Krussow",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/JLEAR749/Project_3/issues"
+  },
+  "homepage": "https://github.com/JLEAR749/Project_3#readme"
 }
