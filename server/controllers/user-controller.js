@@ -30,5 +30,34 @@ module.exports = {
        
         return res.json(updateScore);
       },
+
+      async saveUser ({ body }, res) {
+        const user = await User.findOneAndUpdate(body); //double check findOneAndUpdate
+        if (!user) {
+            return res.status(400).json({ message: 'Something is wrong!' });
+          }
+          const token = signToken(user);
+          res.json({ token, user });
+      },
+
+      async deleteUser({ user, params }, res) {
+        const updateUser = await User.findOneAndUpdate(
+          { _id: user._id },
+          { $pull: { savedUser: { userId: params.userId } } },
+          { new: true }
+        );
+       
+        return res.json(updateUser);
+      },
+
+      async getSingleUser({ body }, res) {
+        const user = await User.findOne(
+          { _id: user._id },
+        );
+        
+        const token = signToken(user);
+        return res.json(token, user);
+      },
+
     };
 
