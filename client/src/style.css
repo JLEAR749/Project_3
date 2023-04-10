@@ -1,0 +1,47 @@
+
+main{
+    background-color: white;
+}
+.inputboxes{
+    display: flex;
+    flex-direction: column;
+    max-width: 80%;
+    margin:20px auto ;
+}
+.inputboxes input{
+    background: none;
+  border: 0;
+  height: 40px;
+  width: 100%;
+  border-bottom: 1px solid #eee;
+  font-size: .9rem;
+  padding: 8px 15px;
+}
+.inputboxes .btn{
+    margin-top: 20px;
+}
+.form-section {
+    padding: 16px;
+    font-size: .85rem;
+    background-color: #c5cdd7;
+    box-shadow: rgb(0 0 0 / 8%) 0 -1px;
+    margin-top: 50px;
+  }
+  
+  .form-section a {
+    font-weight: bold;
+    color: #3c00ff;
+    transition: color .3s ease;
+  }
+  
+ 
+  .formcontainer{
+    margin: auto;
+    margin-top: 200px;
+   width: 40% ;
+          min-width: 400px !important;
+
+  }
+  .notactive{
+    display: none;
+  }
