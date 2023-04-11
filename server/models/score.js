@@ -2,12 +2,12 @@ const { Schema, model } = require('mongoose');
 
 const scoreSchema = new Schema({
   name: {
-    type: Int,
+    type: Number,
     required: true,
     unique: true,
   },
 });
 
-const Tech = model('Score', scoreSchema);
+const Score = model('Score', scoreSchema);
 
 module.exports = Score;
