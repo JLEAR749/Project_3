@@ -3,6 +3,7 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import { ApolloClient, ApolloProvider, InMemoryCache } from '@apollo/client';
 import Home from './pages/Home';
 import Matchup from './pages/Matchup';
+import Questions from './pages/Questions';
 import Vote from './pages/Vote';
 import Login from './pages/Login';
 import Sightup from './pages/signup';
@@ -35,7 +36,10 @@ function App() {
              <Route 
               path="/login" 
               element={<Login />}
-            />
+            /><Route 
+            path="/Questions" 
+            element={<Questions />}
+          />
             <Route 
               path="*"
               element={<NotFound />}
