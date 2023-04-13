@@ -15,7 +15,7 @@ const Home = () => {
         <h1>Welcome Basement Bar Trivia!</h1>
       </div>
       <div className="card-body m-5">
-        <h2> Click for categories: </h2>
+        <h2> Welcome Basement Bar Trivia! </h2>
         {loading ? (
           <div>Loading...</div>
         ) : (
@@ -33,9 +33,9 @@ const Home = () => {
         )}
       </div>
       <div className="card-footer text-center m-3">
-        <h2>Ready to create a new matchup?</h2>
-        <Link to="/matchup">
-          <button className="btn btn-lg btn-danger">Create Matchup!</button>
+        <h2> Ready to unlock your knoweldge </h2>
+        <Link to="/Questions">
+          <button className="btn btn-lg btn-danger"> Start Trivia! </button>
         </Link>
       </div>
     </div>
