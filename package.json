@@ -1,19 +1,8 @@
 {
-  "dependencies": {
-    "apollo-server-express": "^3.12.0",
-    "bcrypt": "^5.1.0",
-    "concurrently": "^8.0.1",
-    "express": "^4.18.2",
-    "graphql": "^16.6.0",
-    "jsonwebtoken": "^9.0.0",
-    "mongoose": "^7.0.3",
-    "nodemon": "^2.0.22",
-    "react": "^18.2.0"
-  },
   "name": "project_3",
   "description": "An at home bar trivia game",
   "version": "1.0.0",
-  "main": "index.js",
+  "main": "server/server.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node server/server.js",
@@ -31,6 +20,7 @@
   },
   "homepage": "https://github.com/JLEAR749/Project_3#readme",
   "devDependencies": {
-    "concurrently": "^8.0.1"
+    "concurrently": "^8.0.1",
+    "nodemon": "^2.0.22"
   }
 }
