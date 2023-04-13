@@ -2,6 +2,7 @@
 main{
     background-color: white;
 }
+
 .inputboxes{
     display: flex;
     flex-direction: column;
@@ -45,4 +46,33 @@ main{
   .notactive{
     display: none;
   }
-  
+  .card{
+    margin: 20px;
+  }
+  .questions-header{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .questions-header h1{
+    margin-left: auto; 
+  }
+  .questions-header p{
+margin-left: auto;  }
+.questionscard ul{
+  margin: 50px;
+}
+.questionscard h3{
+margin: 50px;
+}
+.multiplechoice li{
+  list-style-type: upper-alpha;
+  margin: 20px;
+}
+.multiplechoice li a{
+  margin-left: 10px;
+  cursor: pointer;
+}
+#submitbtn{
+  float: right;
+}
