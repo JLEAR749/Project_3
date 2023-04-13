@@ -16,7 +16,6 @@ const client = new ApolloClient({
   uri: "/graphql",
   cache: new InMemoryCache(),
 });
-const apiUrl = '';
 
 function App() {
   return (
@@ -40,6 +39,10 @@ function App() {
              <Route 
               path="/login" 
               element={<Login />}
+            />
+              <Route
+              path="/question"
+              element={<Questions />}
             />
             <Route 
               path="*"
