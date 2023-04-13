@@ -4,7 +4,6 @@ import { ApolloClient, ApolloProvider, InMemoryCache } from '@apollo/client';
 import Home from './pages/Home';
 import Matchup from './pages/Matchup';
 import Questions from './pages/Questions';
-import Vote from './pages/Vote';
 import Login from './pages/Login';
 import Sightup from './pages/signup';
 import NotFound from './pages/NotFound';
@@ -31,10 +30,6 @@ function App() {
             <Route 
               path="/signup" 
               element={<Signup />}
-            />
-            <Route 
-              path="/matchup/:id" 
-              element={<Vote />}
             />
              <Route 
               path="/login" 
