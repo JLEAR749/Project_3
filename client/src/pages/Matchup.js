@@ -30,7 +30,7 @@ const Matchup = () => {
         variables: { ...formData },
       });
 
-      navigate(`/matchup/${data.createMatchup._id}`);
+      navigate(`/matchup/${data.game._id}`);
     } catch (err) {
       console.error(err);
     }

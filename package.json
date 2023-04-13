@@ -29,5 +29,8 @@
   "bugs": {
     "url": "https://github.com/JLEAR749/Project_3/issues"
   },
-  "homepage": "https://github.com/JLEAR749/Project_3#readme"
+  "homepage": "https://github.com/JLEAR749/Project_3#readme",
+  "devDependencies": {
+    "concurrently": "^8.0.1"
+  }
 }

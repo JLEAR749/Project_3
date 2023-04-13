@@ -11,7 +11,7 @@ import NotFound from './pages/NotFound';
 import Signup from './pages/signup';
 
 const client = new ApolloClient({
-  uri: '/graphql',
+  uri: "/graphql",
   cache: new InMemoryCache(),
 });
 
@@ -20,6 +20,7 @@ function App() {
     <ApolloProvider client={client}>
       <Router>
         <div className="flex-column justify-center align-center min-100-vh bg-primary">
+          <Navbar />
           <Routes>
             <Route 
               path="/" 
@@ -36,10 +37,7 @@ function App() {
              <Route 
               path="/login" 
               element={<Login />}
-            /><Route 
-            path="/Questions" 
-            element={<Questions />}
-          />
+            />
             <Route 
               path="*"
               element={<NotFound />}
@@ -47,6 +45,7 @@ function App() {
           </Routes>
         </div>
       </Router>
+      <Footer />
     </ApolloProvider>
   );
 }
