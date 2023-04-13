@@ -49,7 +49,7 @@ const Vote = () => {
             <br></br>
             <Link to="/">
               <button className="btn btn-lg btn-danger">
-                View all matgachups
+                View all matchups
               </button>
             </Link>
           </div>
