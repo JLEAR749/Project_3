@@ -72,7 +72,7 @@ const Matchup = () => {
               })}
             </select>
             <button className="btn btn-danger" type="submit">
-              Create Matchup!
+              Start Trivia!
             </button>
           </form>
         )}
