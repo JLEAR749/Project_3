@@ -5,7 +5,6 @@ import Home from './pages/Home';
 import Matchup from './pages/Matchup';
 import Questions from './pages/Questions';
 import Login from './pages/Login';
-import Sightup from './pages/signup';
 import NotFound from './pages/NotFound';
 import Signup from './pages/signup';
 import Navbar from './pages/Navbar';
