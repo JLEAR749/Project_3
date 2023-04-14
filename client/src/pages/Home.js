@@ -34,7 +34,7 @@ const Home = () => {
       </div>
       <div className="card-footer text-center m-3">
         <h2> Ready to unlock your knoweldge </h2>
-        <Link to="/Questions">
+        <Link to="/question">
           <button className="btn btn-lg btn-danger"> Start Trivia! </button>
         </Link>
       </div>
