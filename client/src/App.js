@@ -2,7 +2,6 @@ import React, { useState, useEffect } from "react";
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import { ApolloClient, ApolloProvider, InMemoryCache } from '@apollo/client';
 import Home from './pages/Home';
-import Matchup from './pages/Matchup';
 import Questions from './pages/Questions';
 import Login from './pages/Login';
 import NotFound from './pages/NotFound';
