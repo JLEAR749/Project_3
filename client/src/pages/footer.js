@@ -1,13 +1,21 @@
 const Footer = () => {
-  return (
-    <footer>
-      <div class="d-grid gap-2">
-        <button class="btn btn-primary" type="button">
+    return (
+      <div class="container py-3">
+        <div class="row">
+      <div class="col text-center">
+      <button type="button" class="btn btn-outline-info btn-lg mx-2">
+          About
+      </button>
+      <button type="button" class="btn btn-outline-info btn-lg mx-2">
+          Contact
+      </button>
+      <button type="button" class="btn btn-outline-info btn-lg mx-2">
           Donate
-        </button>
+      </button>
       </div>
-    </footer>
+      </div>
+    </div>
   );
-};
+  };
 
 export default Footer;

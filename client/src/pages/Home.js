@@ -7,38 +7,23 @@ const Home = () => {
     fetchPolicy: "no-cache"
   });
 
-  const matchupList = data?.matchups || [];
-
   return (
-    <div className="card bg-white card-rounded w-50">
-\      <div className="card-header bg-dark text-center">
-        <h1>Welcome Basement Bar Trivia!</h1>
-      </div>
-      <div className="card-body m-5">
-        <h2> Welcome Basement Bar Trivia! </h2>
-        {loading ? (
-          <div>Loading...</div>
-        ) : (
-          <ul className="square">
-            {matchupList.map((matchup) => {
-              return (
-                <li key={matchup._id}>
-                  <Link to={{ pathname: `/matchup/${matchup._id}` }}>
-                    {matchup.tech1} vs. {matchup.tech2}
-                  </Link>
-                </li>
-              );
-            })}
-          </ul>
-        )}
-      </div>
-      <div className="card-footer text-center m-3">
-        <h2> Ready to unlock your knoweldge </h2>
-        <Link to="/Questions">
-          <button className="btn btn-lg btn-danger"> Start Trivia! </button>
-        </Link>
+<div class="row">
+  <div class="col-sm-6">
+    <div class="card">
+      <div class="card-body">
+        <h5 class="card-title">HERO</h5>
       </div>
     </div>
+  </div>
+  <div class="col-sm-6">
+    <div class="card">
+      <div class="card-body">
+        <h5 class="card-title">LEADERBOARD</h5>
+      </div>
+    </div>
+  </div>
+</div>
   );
 };
 
