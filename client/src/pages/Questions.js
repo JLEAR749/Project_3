@@ -69,11 +69,6 @@ const RandomQ = () => {
     answers.push(currentQuestion.correctAnswer)
     const finallist = shuffle(answers)
     console.log(answers);
-    for (let i = 0; i <3; i++) {
-        const element = answers[i];
-        console.log(element);
-        
-    }
     
     const handleAnswerClick = (answer) => {
         if (answer === currentQuestion.correctAnswer) {
@@ -99,7 +94,6 @@ const RandomQ = () => {
             <div className="card bg-white p-5 rounded-lg shadow game" id="game">
                 <div className="card-header questions-header">
                     <h1>{capCategory}</h1>
-                    <p>00:00:00</p>
                 </div>
                 {loading ? (
                     <div class="card-body">
@@ -130,7 +124,6 @@ const RandomQ = () => {
                         </a>
                     </div>
                 )}
-                {<div>Something went wrong...</div>}
             </div>
             <div className="card bg-white p-5 rounded-lg shadow gameover" id="gameover">
                 <h1>Game Over: You Got {score}/10 <a href="/" className="btn btn-outline-dark"> Home</a> </h1>

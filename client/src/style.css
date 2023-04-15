@@ -90,3 +90,8 @@ margin: 50px;
 .gameover{
   display: none;
 }
+footer{
+  position: absolute;
+  bottom: 0px;
+  width: 100%;
+}
