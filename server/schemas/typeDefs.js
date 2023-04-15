@@ -29,7 +29,7 @@ const typeDefs = gql`
     addUser(username: String!, email: String!, password: String!): AddUserResponse
     saveUser(user: String!): User
     deleteUser(user: String!): User
-    login(user: String!): User
+    login(email: String!, password: String!): AddUserResponse
     saveScore(user: String!): Score
     
   }
