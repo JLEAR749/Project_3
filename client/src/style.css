@@ -72,7 +72,21 @@ margin: 50px;
 .multiplechoice li a{
   margin-left: 10px;
   cursor: pointer;
+  transition: .3s;
+}
+.multiplechoice li a:hover{
+  border: solid black;
+  /* width: 10%; */
+  border-radius: 15px;
+  padding: 9px;
+  color: #3c00ff;
+  
+  
 }
 #submitbtn{
   float: right;
+  display: none;
+}
+.gameover{
+  display: none;
 }
