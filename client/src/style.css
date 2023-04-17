@@ -1,4 +1,9 @@
-
+.body {
+  margin-bottom: 0px;
+  }
+:root {
+  --bs-body-font-family: 'Fascinate', cursive !important; 
+}
 main{
     background-color: white;
 }
@@ -93,7 +98,7 @@ margin: 50px;
   display: none;
 }
 footer{
-  position: absolute;
+  position: flex;
   bottom: 0px;
   width: 100%;
 }

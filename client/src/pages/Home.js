@@ -11,12 +11,15 @@ const Home = () => {
 
   return (
     <main>
-    <div className="card bg-white card-rounded w-50 mx-auto">
-    <div className="card-header bg-dark text-center">
-        <h1>Welcome Basement Bar Trivia!</h1>
+    <div className="container">
+    <div className="row">
+    <div className="col-md-6">
+    <div className="card bg-white card-rounded">
+    <div className="card-header text-center m-2">
+        <h1>Welcome to Basement Bar Trivia!</h1>
       </div>
-      <div className="card-body mx-auto m-5">
-        <h2> Welcome Basement Bar Trivia! </h2>
+      <div className="card-body text-center m-2">
+        <h2> Ready to unlock your knowledge? </h2>
         {loading ? (
           <div>Loading...</div>
         ) : (
@@ -33,18 +36,17 @@ const Home = () => {
           </ul>
         )}
       </div>
-      <div className="card-footer text-center m-3">
-        <h2> Ready to unlock your knoweldge </h2>
+      <div className="card-footer text-center m-2">
         <div>
           {Auth.loggedIn() ? (
             <>
              <Link to="/question">
-          <button className="btn btn-lg btn-danger"> Start Trivia! </button>
+          <button className="btn btn-lg btn-danger m-2" to="/question"> Start Trivia! </button>
         </Link>
             </>
           ) : (
             <>
-              <Link className="btn btn-lg btn-info m-2" to="/login">
+              <Link className="btn btn-lg btn-danger m-2" to="/login">
                 Login
               </Link>
             </>
@@ -52,6 +54,16 @@ const Home = () => {
         </div>
         
       </div>
+    </div>
+    </div>
+    <div className="col-md-6">
+    <div className="card bg-white card-rounded">
+      <div className="card-body">
+        <img src="../Hero.png" alt="Hero" className="img-fluid" />
+      </div>
+    </div>
+    </div>
+    </div>
     </div>
     </main>
   );
