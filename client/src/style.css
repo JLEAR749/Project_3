@@ -2,7 +2,9 @@
 main{
     background-color: white;
 }
-
+#navbarNav{
+  justify-content: flex-end;
+}
 .inputboxes{
     display: flex;
     flex-direction: column;

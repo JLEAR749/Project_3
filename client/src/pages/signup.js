@@ -40,8 +40,8 @@ const Signup = () => {
 
   return (
     <main >
-      <div className="col-12 col-lg-10 mx-auto ">
-        <div className="card bg-light formcontainer">
+      <div className="col-12 col-lg-10  mx-auto">
+        <div className="card bg-light formcontainer mx-auto">
           <h4 className="card-header bg-dark text-center text-light p-3">Sign Up</h4>
           <div className="card-body">
             {data ? (
