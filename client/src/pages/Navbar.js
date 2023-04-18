@@ -20,13 +20,13 @@ const Navbar = () => {
       </button>
       <div className="collapse navbar-collapse justify-content-center" id="navbarNav">
         
-    <a class="btn btn-outline-dark m-2" href="/contact">Contact</a>
-    <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
-      <li class="nav-item active">
-        <a class="btn btn-outline-dark m-2" href="/">Home <span class="sr-only"></span></a>
+    <a className="btn btn-outline-dark m-2" href="/contact">Contact</a>
+    <ul className="navbar-nav mr-auto mt-2 mt-lg-0">
+      <li className="nav-item active">
+        <a className="btn btn-outline-dark m-2" href="/">Home <span className="sr-only"></span></a>
       </li>
-      <li class="nav-item">
-        <a class="btn btn-outline-dark m-2" href="/about">About</a>
+      <li className="nav-item">
+        <a className="btn btn-outline-dark m-2" href="/about">About</a>
       </li>
       <li>
           {Auth.loggedIn() ? (

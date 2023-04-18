@@ -9,8 +9,14 @@ import API from "../";
 //Get request for random question
 const RandomQ = () => {
   const loading = false;
+  let newIncorrect = [];
+  let category = "";
+  let capCategory = category.toUpperCase();
+  let finallist = [];
   let [score, setScore] = useState(0);
   let [currentIndex, setCurrentIndex] = useState(0);
+  let [questionLoaded, setQuestionLoaded] = useState(false);
+  let [displaySummary, setDisplaySummary] = useState(false);
   let [currentQuestion, setCurrentQuestion] = useState({});
   useEffect(async () => {
     const resp = await fetch("https://the-trivia-api.com/v2/questions", {
@@ -24,13 +30,23 @@ const RandomQ = () => {
     }).then((res) => res.json());
     console.log("Hey it worked", resp);
     // storing input name
-    localStorage.setItem("name", JSON.stringify(resp) , initialize());
+    localStorage.setItem("name", JSON.stringify(resp));
 
+    loadQuestion(resp[0]);
 
     // Add data from the resp object to the page
 
     // console.log("This is the data!", resp);
   }, []);
+
+  useEffect(() => {
+    if (currentIndex >= 10) {
+      setQuestionLoaded(false);
+      setDisplaySummary(true);
+    } else {
+      advanceQuestion();
+    }
+  }, [currentIndex]);
 
   // getting stored value
   function shuffle(array) {
@@ -50,54 +66,49 @@ const RandomQ = () => {
     return array;
   }
   // Used like so
-  var arr = [2, 11, 37, 42];
-  shuffle(arr);
-  console.log(arr);
-  const answers = [];
-  let saved = localStorage.getItem("name");
-  const setName = JSON.parse(saved);
-  console.log(setName);
-    currentQuestion = setName[currentIndex];
-  
+  function loadQuestion(qObj) {
+    let arr = [2, 11, 37, 42];
+    shuffle(arr);
+    console.log(arr);
+    setCurrentQuestion({ ...qObj }); // always starts at 0
 
-  let newIncorrect = currentQuestion.incorrectAnswers;
-  let Category = currentQuestion.category;
-   let capCategory = Category.toUpperCase();
+    category = qObj.category;
+    capCategory = category.toUpperCase();
 
-  console.log(newIncorrect);
-  newIncorrect.forEach((answer) => {
-    answers.push(answer);
-  });
-  answers.push(currentQuestion.correctAnswer);
-   const finallist = shuffle(answers);
-  console.log(answers);
+    console.log("Current question!", currentQuestion);
 
+    if (!questionLoaded) {
+      setQuestionLoaded(true);
+    }
+  }
+
+  const getAnswers = () => {
+    let newIncorrect = [...currentQuestion.incorrectAnswers];
+    let answers = [];
+    newIncorrect.forEach((answer) => {
+      answers.push(answer);
+    });
+    answers.push(currentQuestion.correctAnswer);
+    finallist = shuffle(answers);
+    console.log(answers);
+    return finallist;
+  };
 
   const advanceQuestion = () => {
     const questions = JSON.parse(localStorage.getItem("name"));
-    setCurrentQuestion(questions[currentIndex]);
-  }
-
+    loadQuestion(questions[currentIndex]);
+  };
 
   const handleAnswerClick = (answer) => {
+    const setName = localStorage.getItem("name");
     if (answer === currentQuestion.correctAnswer) {
       console.log("correct");
       setScore(score + 1);
       console.log(score);
     }
-    if (currentIndex < setName.length - 1) {
-      setCurrentIndex(currentIndex + 1); // Increment currentIndex by 1
-      advanceQuestion();
-    } else {
-      // If currentIndex is at the last index, loop back to the beginning of the array
-      console.log("Game Over: }" + "You Got " + score + "/10");
-      document.getElementById("submitbtn").style.display = "block";
-      document.getElementById("game").style.display = "none";
-      document.getElementById("gameover").style.display = "block";
-    }
-  };
 
-  
+    setCurrentIndex(currentIndex + 1); // Increment currentIndex by 1
+  };
 
   return (
     <main>
@@ -105,25 +116,40 @@ const RandomQ = () => {
         <div className="card-header questions-header">
           <h1>{capCategory}</h1>
         </div>
-        {loading ? (
-          <div className="card-body">
-            <h5 className="card-title placeholder-glow">
-              <span className="placeholder col-6"></span>
-            </h5>
-            <p className="card-text placeholder-glow">
-              <span className="placeholder col-7"></span>
-              <span className="placeholder col-4"></span>
-              <span className="placeholder col-4"></span>
-              <span className="placeholder col-6"></span>
-              <span className="placeholder col-8"></span>
-            </p>
-            <a className="btn btn-primary disabled placeholder col-6"></a>
-          </div>
+        {!questionLoaded ? (
+          displaySummary ? (
+            <div
+              className="card bg-white p-5 rounded-lg shadow gameover"
+              id="gameover"
+            >
+              <h1>
+                Game Over: You Got {score}/10 Correct
+                <a href="/" className="btn btn-outline-dark mx-4">
+                  {" "}
+                  Home
+                </a>{" "}
+              </h1>
+            </div>
+          ) : (
+            <div className="card-body">
+              <h5 className="card-title placeholder-glow">
+                <span className="placeholder col-6"></span>
+              </h5>
+              <p className="card-text placeholder-glow">
+                <span className="placeholder col-7"></span>
+                <span className="placeholder col-4"></span>
+                <span className="placeholder col-4"></span>
+                <span className="placeholder col-6"></span>
+                <span className="placeholder col-8"></span>
+              </p>
+              <a className="btn btn-primary disabled placeholder col-6"></a>
+            </div>
+          )
         ) : (
           <div className="card-body questionscard">
             <h3 className="card-title">{currentQuestion.question.text}</h3>
             <ul className="multiplechoice">
-              {finallist.map((choice) => (
+              {getAnswers().map((choice) => (
                 <li key={choice}>
                   <a onClick={() => handleAnswerClick(choice)}>{choice}</a>
                 </li>
@@ -135,19 +161,8 @@ const RandomQ = () => {
           </div>
         )}
       </div>
-      <div
-        className="card bg-white p-5 rounded-lg shadow gameover"
-        id="gameover"
-      >
-        <h1>
-          Game Over: You Got {score}/10 Correct
-          <a href="/" className="btn btn-outline-dark mx-4">
-            {" "}
-            Home
-          </a>{" "}
-        </h1>
-      </div>
     </main>
   );
 };
+
 export default RandomQ;
