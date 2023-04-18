@@ -126,7 +126,7 @@ const RandomQ = () => {
                 )}
             </div>
             <div className="card bg-white p-5 rounded-lg shadow gameover" id="gameover">
-                <h1>Game Over: You Got {score}/10 <a href="/" className="btn btn-outline-dark"> Home</a> </h1>
+                <h1>Game Over: You Got {score}/10 Correct<a href="/" className="btn btn-outline-dark mx-4"> Home</a> </h1>
             </div>
         </main>
     );
