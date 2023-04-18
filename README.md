@@ -22,9 +22,8 @@ The user is able to login or sign up for the basement bar trivia.
 
 When a user opens the app they are presented with a signup/ login form.    If the user has already created an account they can use the login and access their profile and their movie review/ rating dashboard. If the user doesn't have an account they can create one by entering a Username, Email, and Password.
 
-Once logged in the user will have the ability to pick out a caterogy and answer different quesitons.  Here is your time to show off your knowledge.    
-
-The user will be able to add, delete and update scores.    
+Once logged in the user will have the ability to start the trivia.  Here is your time to show off your knowledge.    
+  
 ### Usage
 
 GitHub Link:
