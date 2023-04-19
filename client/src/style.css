@@ -94,9 +94,7 @@ margin: 50px;
   float: right;
   display: none;
 }
-.gameover{
-  display: none;
-}
+
 footer{
   position: flex;
   bottom: 0px;
